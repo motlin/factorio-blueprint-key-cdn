@@ -1,0 +1,522 @@
+{
+    "blueprint": {
+        "icons": [
+            {
+                "signal": {
+                    "type": "item",
+                    "name": "lab"
+                },
+                "index": 1
+            },
+            {
+                "signal": {
+                    "type": "item",
+                    "name": "fast-transport-belt"
+                },
+                "index": 2
+            }
+        ],
+        "entities": [
+            {
+                "entity_number": 1,
+                "name": "arithmetic-combinator",
+                "position": {
+                    "x": -4,
+                    "y": -3.5
+                },
+                "control_behavior": {
+                    "arithmetic_conditions": {
+                        "first_signal": {
+                            "type": "virtual",
+                            "name": "signal-each"
+                        },
+                        "constant": -1,
+                        "operation": "*",
+                        "output_signal": {
+                            "type": "virtual",
+                            "name": "signal-each"
+                        }
+                    }
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 31
+                            }
+                        ]
+                    },
+                    "2": {
+                        "green": [
+                            {
+                                "entity_id": 2,
+                                "circuit_id": 1
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 2,
+                "name": "arithmetic-combinator",
+                "position": {
+                    "x": -3,
+                    "y": -3.5
+                },
+                "control_behavior": {
+                    "arithmetic_conditions": {
+                        "first_signal": {
+                            "type": "virtual",
+                            "name": "signal-each"
+                        },
+                        "constant": 0,
+                        "operation": "+",
+                        "output_signal": {
+                            "type": "virtual",
+                            "name": "signal-each"
+                        }
+                    }
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 2,
+                                "circuit_id": 2
+                            },
+                            {
+                                "entity_id": 1,
+                                "circuit_id": 2
+                            },
+                            {
+                                "entity_id": 18
+                            }
+                        ]
+                    },
+                    "2": {
+                        "green": [
+                            {
+                                "entity_id": 2,
+                                "circuit_id": 1
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 3,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": -2,
+                    "y": -3
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 4,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": -2,
+                    "y": -4
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 5,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 0,
+                    "y": -3
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 6,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": -1,
+                    "y": -3
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 7,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 0,
+                    "y": -4
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 8,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": -1,
+                    "y": -4
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 9,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 2,
+                    "y": -3
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 10,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 1,
+                    "y": -3
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 11,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 2,
+                    "y": -4
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 12,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 1,
+                    "y": -4
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 13,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 3,
+                    "y": -3
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 14,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 3,
+                    "y": -4
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 15,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": -4,
+                    "y": -2
+                },
+                "direction": 4
+            },
+            {
+                "entity_number": 16,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": -4,
+                    "y": -1
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 17,
+                "name": "fast-splitter",
+                "position": {
+                    "x": -3,
+                    "y": -1.5
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 18,
+                "name": "fast-inserter",
+                "position": {
+                    "x": -2,
+                    "y": -2
+                },
+                "control_behavior": {
+                    "circuit_condition": {
+                        "first_signal": {
+                            "type": "item",
+                            "name": "utility-science-pack"
+                        },
+                        "constant": 0,
+                        "comparator": "<"
+                    },
+                    "circuit_read_hand_contents": true
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 2,
+                                "circuit_id": 1
+                            },
+                            {
+                                "entity_id": 21
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 19,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": -2,
+                    "y": -1
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 20,
+                "name": "fast-inserter",
+                "position": {
+                    "x": 0,
+                    "y": -2
+                },
+                "control_behavior": {
+                    "circuit_condition": {
+                        "first_signal": {
+                            "type": "item",
+                            "name": "chemical-science-pack"
+                        },
+                        "constant": 0,
+                        "comparator": "<"
+                    },
+                    "circuit_read_hand_contents": true
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 21
+                            },
+                            {
+                                "entity_id": 25
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 21,
+                "name": "fast-inserter",
+                "position": {
+                    "x": -1,
+                    "y": -2
+                },
+                "control_behavior": {
+                    "circuit_condition": {
+                        "first_signal": {
+                            "type": "item",
+                            "name": "production-science-pack"
+                        },
+                        "constant": 0,
+                        "comparator": "<"
+                    },
+                    "circuit_read_hand_contents": true
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 20
+                            },
+                            {
+                                "entity_id": 18
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 22,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": -1,
+                    "y": -1
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 23,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 0,
+                    "y": -1
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 24,
+                "name": "fast-inserter",
+                "position": {
+                    "x": 2,
+                    "y": -2
+                },
+                "control_behavior": {
+                    "circuit_condition": {
+                        "first_signal": {
+                            "type": "item",
+                            "name": "logistic-science-pack"
+                        },
+                        "constant": 0,
+                        "comparator": "<"
+                    },
+                    "circuit_read_hand_contents": true
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 25
+                            },
+                            {
+                                "entity_id": 28
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 25,
+                "name": "fast-inserter",
+                "position": {
+                    "x": 1,
+                    "y": -2
+                },
+                "control_behavior": {
+                    "circuit_condition": {
+                        "first_signal": {
+                            "type": "item",
+                            "name": "military-science-pack"
+                        },
+                        "constant": 0,
+                        "comparator": "<"
+                    },
+                    "circuit_read_hand_contents": true
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 20
+                            },
+                            {
+                                "entity_id": 24
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 26,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 1,
+                    "y": -1
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 27,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 2,
+                    "y": -1
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 28,
+                "name": "fast-inserter",
+                "position": {
+                    "x": 3,
+                    "y": -2
+                },
+                "control_behavior": {
+                    "circuit_condition": {
+                        "first_signal": {
+                            "type": "item",
+                            "name": "automation-science-pack"
+                        },
+                        "constant": 0,
+                        "comparator": "<"
+                    },
+                    "circuit_read_hand_contents": true
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 24
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 29,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 3,
+                    "y": -1
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 30,
+                "name": "fast-transport-belt",
+                "position": {
+                    "x": 4,
+                    "y": -1
+                },
+                "direction": 6
+            },
+            {
+                "entity_number": 31,
+                "name": "fast-inserter",
+                "position": {
+                    "x": -4,
+                    "y": 0
+                },
+                "control_behavior": {
+                    "circuit_mode_of_operation": 3,
+                    "circuit_read_hand_contents": true
+                },
+                "connections": {
+                    "1": {
+                        "green": [
+                            {
+                                "entity_id": 1,
+                                "circuit_id": 1
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "entity_number": 32,
+                "name": "lab",
+                "position": {
+                    "x": -4,
+                    "y": 2
+                }
+            }
+        ],
+        "item": "blueprint",
+        "version": 64425164803
+    }
+}
